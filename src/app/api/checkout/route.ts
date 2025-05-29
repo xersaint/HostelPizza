@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
 import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
-import { authOptions } from "../auth/[...nextauth]/route";
 import { Order } from "@/app/models/Order";
 import { MenuItem } from "@/app/models/MenuItem";
 import MenuItemAddOn from "@/types/MenuItemAddOn";
 import {client, paypal} from "@/libs/paypal";
+import { authOptions } from "@/libs/authOptions";
 
 export async function POST(req: NextRequest) {
   await mongoose.connect(process.env.MONGODB_URI!);

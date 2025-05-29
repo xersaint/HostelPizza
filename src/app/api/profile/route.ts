@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../auth/[...nextauth]/route";
 import { User } from "@/app/models/User";
 import { NextRequest, NextResponse } from "next/server";
+import { authOptions } from "@/libs/authOptions";
 
 export async function PUT(req: NextRequest) {
   try {
